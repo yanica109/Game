@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Game</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="button_login">LOGIN</string>
+    <string name="button_register">REGISTER</string>
+    <string name="button_link_to_register">Not a member? Sign up now.</string>
+    <string name="button_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="button_logout">LOGOUT</string>
+</resources>
