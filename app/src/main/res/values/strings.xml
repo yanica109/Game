@@ -7,5 +7,7 @@
     <string name="button_link_to_register">Not a member? Sign up now.</string>
     <string name="button_link_to_login">Already registred! Login Me.</string>
     <string name="welcome">Welcome</string>
+    <string name="staq">staq</string>
     <string name="button_logout">LOGOUT</string>
+    <string name="button_create_room">CREATE ROOM</string>
 </resources>

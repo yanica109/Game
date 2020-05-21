@@ -34,15 +34,25 @@
             android:textSize="13dp" />
 
         <Button
-            android:id="@+id/btnLogout"
+            android:id="@+id/button_logout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dip"
-            android:background="@color/btn_logut_bg"
+            android:background="@color/button_logout_bg"
             android:text="@string/button_logout"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="15dp" />
+        <Button
+            android:id="@+id/button_create_room"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@color/button_logout_bg"
+            android:text="@string/button_create_room"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+        android:textSize="15dp" />
     </LinearLayout>
 
 </RelativeLayout>

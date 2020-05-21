@@ -109,70 +109,6 @@ public class RegisterActivity extends Activity {
 
     }
 
-//    private void send_data(String name,String password){
-//        HashMap<String, String> params = new HashMap<>();
-//        params.put("username", name);
-//        params.put("password", password);
-//
-//
-//        StringBuilder sbParams = new StringBuilder();
-//        int i = 0;
-//        for (String key : params.keySet()) {
-//            try {
-//                if (i != 0){
-//                    sbParams.append("&");
-//                }
-//                sbParams.append(key).append("=")
-//                        .append(URLEncoder.encode(params.get(key), "UTF-8"));
-//
-//            } catch (UnsupportedEncodingException e) {
-//                e.printStackTrace();
-//            }
-//            i++;
-//        }
-//
-//        HttpURLConnection conn = null;
-//        try{
-//            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//
-//            StrictMode.setThreadPolicy(policy);
-//            URL urlObj = new URL(URL_REGISTER);
-//            conn = (HttpURLConnection) urlObj.openConnection();
-//            conn.setDoOutput(true);
-//            conn.setRequestMethod("POST");
-//            conn.setRequestProperty("Accept-Charset", "UTF-8");
-//
-//            conn.setReadTimeout(10000);
-//            conn.setConnectTimeout(15000);
-//
-//            conn.connect();
-//
-//            String paramsString = sbParams.toString();
-//
-//            DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-//            wr.writeBytes(paramsString);
-//            wr.flush();
-//            wr.close();
-//
-//            InputStream in = new BufferedInputStream(conn.getInputStream());
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-//            StringBuilder result = new StringBuilder();
-//            String line;
-//            while ((line = reader.readLine()) != null) {
-//                result.append(line);
-//            }
-//
-//            Log.d("test", "result from server: " + result.toString());
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }  finally {
-//            if (conn != null) {
-//                conn.disconnect();
-//            }
-//        }
-//
-//    }
     private void registerUser(final String name,
                               final String password) {
         // Tag used to cancel the request
@@ -195,7 +131,6 @@ public class RegisterActivity extends Activity {
                     if (!error) {
 
                         JSONObject user = jObj.getJSONObject("user");
-                        System.out.print("before addUser");
                         // Inserting row in users table
                         db.addUser(name);
 
@@ -225,7 +160,6 @@ public class RegisterActivity extends Activity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                System.out.print("gayerr");
                 Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();

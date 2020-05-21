@@ -54,6 +54,22 @@ class db_functions {
         }
     }
 
+      public function getRoomByRoomName($room_name) {
+
+          $stmt = $this->conn->prepare("SELECT * FROM rooms WHERE room_name = ?");
+
+          $stmt->bind_param("s", $room_name);
+
+          if ($stmt->execute()) {
+              $room = $stmt->get_result()->fetch_assoc();
+              $stmt->close();
+              return $room;
+
+          } else {
+              return NULL;
+          }
+      }
+
     public function doesUserExist($username) {
       error_reporting(E_ALL);
       ini_set('display_errors', 1);
